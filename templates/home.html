@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{%block styles%}
+
+<link href='{% static "css/home.css" %}' rel="stylesheet" xmlns="http://www.w3.org/1999/html">
+    <link href='{% static "css/docs.css" %}' rel="stylesheet">
+{%endblock%}
+
+{% block jumbotron%}
+
+<div class="jumbotron" style="background-color: ghostwhite ">
+    <h1 align="center"><strong>Welcome to Pen Pencil</strong></h1>
+    <div class="container" align="center">
+
+    <p class="para1">This website is for the students who wants to learn and tutors who wants to share their knowledge</p>
+
+        <div class="wrap">
+            <div  class="type-wrap">
+                <div id="typed-strings">
+                    <span>Good teachers know how to bring out the best in <strong>students.</strong></span>
+                    <p>Please <em>sign Up</em> if you are visiting for the first time.</p>
+                    <p>For more info, please click any of the below links.</p>
+                </div>
+                <span id="typed" style="white-space:pre;"></span>
+            </div>
+        </div>
+
+
+        <a style="color: black" href="https://github.com/ajayrawat12/PenPencilWeb"  class="btn btn-group-lg btn-success" onclick="_gaq.push(['_trackEvent', 'exit', 'header', 'GitHub']);">
+              <span class="fa fa-github"></span> View on GitHub</a>
+
+        <a style="color: black" href="https://github.com/ajayrawat12/PenPencilWeb/archive/master.zip" class="btn btn-group-lg btn-success " onclick="_gaq.push(['_trackEvent', 'exit', 'download', 'bootstrap-social']);">
+            <span class="fa fa-download"></span> Download</a>
+
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div  class='row' align="center">
+  <h1>
+      <p >
+        <a style="background-color: maroon" class="btn btn-lg btn-primary href='#' role="button" >Students </a>
+
+
+        <a  style="background-color: maroon" class="btn btn-lg btn-primary" href="#" role="button" >Tutors</a>
+    </p>
+  </h1>
+</div>
+
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="/media/background/hands.jpg" title="Choose From" height="200" width="350">
+            <p style="color: antiquewhite">
+
+                <strong style="color:antiquewhite ">Choose From</strong>
+                <br>
+                Hundereds of approved
+                <br>
+                Online tutors
+            </p>
+        </div>
+        <div class="col-sm-4">
+            <img src="/media/background/giphy.gif" title="Help " height="200" width="350">
+            <p style="color: antiquewhite">
+                <strong>Get Help</strong>
+                <br>
+                On any Subject<br>
+                and any topic
+            </p>
+        </div>
+
+        <div class="col-sm-4">
+            <img class="image-responsive" src="/media/background/Arrange2.jpg" title="Manage " height="200" width="300">
+            <p style="color: antiquewhite">
+                <strong>Manage</strong>
+                <br>
+                your courses and schedule one on one Online session<br>
+                whenever you need
+            </p>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+    <div class="row">
+        <div class="well" style="background:honeydew">
+            <h3 align="center">Connect Via</h3>
+              <div class="text-center">
+                  <p>
+
+                <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="btn btn-social-icon btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-facebook']);">
+                  <span class="fa fa-facebook"></span></a>
+
+                <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}" class="btn btn-social-icon btn-google" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-google']);">
+                    <span class="fa fa-google"></span></a>
+
+
+                <a href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}" class="btn btn-social-icon btn-twitter" onclick="_gaq.push(['_trackEvent', 'btn-social-icon', 'click', 'btn-twitter']);">
+                    <span class="fa fa-twitter"></span></a>
+
+                  </p>
+              </div>
+            <br>
+            <div class="row" align="center">
+             <ul class="links">
+
+                 <h3 align="center">Find Us at</h3>
+                    <li><a  style=" color: blue" href="https://www.facebook.com/Pen2Pencil" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'facebook']);">
+                      <span class="fa fa-facebook"></span> Facebook</a></li>
+
+                    <li><a style="color: black" href="https://github.com/ajayrawat12/PenPencilWeb" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'GitHub']);">
+                      <span class="fa fa-github"></span> GitHub</a></li>
+
+                    <li><a  style="color: dodgerblue" href="https://twitter.com/Pen2Pencil" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Twitter']);">
+                      <span class="fa fa-twitter"></span> Twitter</a></li>
+             </ul>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+        <p>
+            <a class="btn btn-lg btn-danger"  href="#top" role="button">Got To Top</a>
+        </p>
+
+
+       <script>
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
+
+{% endblock %}
